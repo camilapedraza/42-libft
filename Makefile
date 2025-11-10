@@ -6,7 +6,7 @@
 #    By: mpedraza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/08 17:45:39 by mpedraza          #+#    #+#              #
-#    Updated: 2025/11/10 15:51:55 by mpedraza         ###   ########.fr        #
+#    Updated: 2025/11/10 19:21:06 by mpedraza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ CC := cc
 CFLAGS := -Wall -Wextra -Werror
 CPPFLAGS := -I .
 CPP_LIB_FLAGS := -L . -l:$(NAME) 
-FTS := ft_isalpha ft_isdigit
+FTS := ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint ft_strlen \
+	   ft_strlcpy
 SRCS := $(FTS:%=%.c)
 OBJS := $(SRCS:%.c=%.o)
 TESTNAME := test_libft

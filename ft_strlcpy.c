@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpedraza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 17:43:44 by mpedraza          #+#    #+#             */
-/*   Updated: 2025/11/10 19:28:17 by mpedraza         ###   ########.fr       */
+/*   Created: 2025/11/10 18:57:10 by mpedraza          #+#    #+#             */
+/*   Updated: 2025/11/10 19:23:37 by mpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdlib.h>
 
-# include <stdlib.h>
+size_t	strlcpy(char *dst, const char *src, size_t siz)
+{
+	size_t	i;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dst, const char *src, size_t siz);
-
-#endif
+	i = 0;
+	if (siz > 0)
+	{
+		while (src[i] && i + 1 < siz)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	while (src[i])
+		i++;
+	return (i);
+}
