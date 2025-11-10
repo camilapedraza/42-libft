@@ -6,38 +6,45 @@
 #    By: mpedraza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/08 17:45:39 by mpedraza          #+#    #+#              #
-#    Updated: 2025/11/08 19:59:07 by mpedraza         ###   ########.fr        #
+#    Updated: 2025/11/10 15:51:55 by mpedraza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-CPPFLAGS = -I .
-CPP_LIB_FLAGS = -L . -l:$(NAME) 
-FTS = ft_isalpha
-SRCS = $(FTS:%=%.c)
-OBJS = $(SRCS:%.c=%.o)
-TESTNAME = test_libft
-TEST_DIR = tests
-TEST_SRCS = $(SRCS:%=$(TEST_DIR)/test_%)
-TEST_OBJS = $(TEST_SRCS:%.c=%.o)
+NAME := libft.a
+CC := cc
+CFLAGS := -Wall -Wextra -Werror
+CPPFLAGS := -I .
+CPP_LIB_FLAGS := -L . -l:$(NAME) 
+FTS := ft_isalpha ft_isdigit
+SRCS := $(FTS:%=%.c)
+OBJS := $(SRCS:%.c=%.o)
+TESTNAME := test_libft
+TEST_DIR := tests
+TEST_SRCS := $(SRCS:%=$(TEST_DIR)/test_%)
+TEST_OBJS := $(TEST_SRCS:%.c=%.o)
+TEST_EXEC := $(TEST_DIR)/run_tests.sh
+TEST_RUN := bash $(TEST_EXEC)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $@ $^
 
-test: $(TESTNAME)
+test: $(NAME) $(TEST_OBJS) $(TEST_EXEC)
+	$(TEST_RUN)
 
-$(TESTNAME): $(NAME) $(TEST_SRCS)
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(TEST_SRCS) $(CPP_LIB_FLAGS) -o $@
+$(TEST_DIR)/%.o: $(TEST_DIR)/%.c 
+	$(CC) $(CFLAGS) $(CPPFLAGS) $< $(CPP_LIB_FLAGS) -o $@
+	@echo "./$@" >> $(TEST_EXEC)
+
+$(TEST_DIR)/run_tests.sh: $(TEST_OBJS)
+	touch $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(TEST_OBJS) 
 
 fclean: clean
-	$(RM) $(NAME) $(TESTNAME)
+	$(RM) $(NAME) $(TEST_EXEC)
 
 re: fclean all
 
