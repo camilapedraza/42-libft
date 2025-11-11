@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_strchr.c                                   :+:      :+:    :+:   */
+/*   test_ft_strrchr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpedraza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:38:24 by mpedraza          #+#    #+#             */
-/*   Updated: 2025/11/11 15:45:21 by mpedraza         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:43:47 by mpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
 int	main(void)
 {
 	const char	*s;
-	char		*ret_val;
+	char		*rval;
 
-	s = "ABC";
-	printf("=== TESTING: FT_STRCHR ===\n");
-	ret_val = ft_strchr(s, 'B');
-	if (ret_val == strchr(s, 'B'))
-		printf("OK - Test PASSED for \"B\" in \"ABC\" [%c]\n", *ret_val);
+	s = "B*B0B!";
+	printf("=== TESTING: FT_STRRCHR ===\n");
+	rval = ft_strrchr(s, 'B');
+	if (rval == strrchr(s, 'B'))
+		printf("OK - Test PASSED for \"B\" in \"B*B0B!\" [%s]\n", rval);
 	else
-		printf("KO - Test FAILED for \"B\" in \"ABC\" [%c]\n", *ret_val);
-	ret_val = ft_strchr(s, '\0');
-	if (ret_val == strchr(s, '\0'))
-		printf("OK - Test PASSED for \"\\0\", in \"ABC\" [%c]\n", *ret_val);
+		printf("KO - Test FAILED for \"B\" in \"B*B0B!\" [%s]\n", rval);
+	rval = ft_strrchr(s, '\0');
+	if (rval == strrchr(s, '\0'))
+		printf("OK - Test PASSED for \"\\0\", in \"B*B0B!\" [%s]\n", rval);
 	else
-		printf("KO - Test FAILED for \"\\0\", in \"ABC\" [%c]\n", *ret_val);
-	ret_val = ft_strchr(s, 'X');
-	if (ret_val == strchr(s, 'X'))
-		printf("OK - Test PASSED for \"X\", in \"ABC\" [%s]\n", ret_val);
+		printf("KO - Test FAILED for \"\\0\", in \"B*B0B!\" [%s]\n", rval);
+	rval = ft_strrchr(s, '*');
+	if (rval == strrchr(s, '*'))
+		printf("OK - Test PASSED for \"*\", in \"B*B0B!\" [%s]\n", rval);
 	else
-		printf("KO - Test FAILED for \"X\", in \"ABC\" [%s]\n", ret_val);
+		printf("KO - Test FAILED for \"*\", in \"B*B0B!\" [%s]\n", rval);
 	return (0);
 }
