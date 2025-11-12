@@ -6,7 +6,7 @@
 /*   By: mpedraza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 17:31:13 by mpedraza          #+#    #+#             */
-/*   Updated: 2025/11/12 18:30:08 by mpedraza         ###   ########.fr       */
+/*   Updated: 2025/11/12 19:40:03 by mpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 		printf("OK - Test PASSED for int arr set to 90 [%d]\n", *me_i);
 	else
 		printf("KO - Test FAILED for int arr set to 90 [%d]\n", *me_i);
-    ft_memset(me_c, 90, sizeof(me_c));
+	ft_memset(me_c, 90, sizeof(me_c));
 	if (me_c[0] == 90 && me_c[1] == 90)
 		printf("OK - Test PASSED for char arr set to 90 [%c]\n", *me_c);
 	else
