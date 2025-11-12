@@ -6,13 +6,11 @@
 /*   By: mpedraza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 17:31:13 by mpedraza          #+#    #+#             */
-/*   Updated: 2025/11/12 18:18:05 by mpedraza         ###   ########.fr       */
+/*   Updated: 2025/11/12 18:30:08 by mpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdbool.h>
 #include <stdio.h>
 
 int	main(void)
