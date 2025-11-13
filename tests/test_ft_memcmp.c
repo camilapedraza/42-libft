@@ -6,7 +6,7 @@
 /*   By: mpedraza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:41:13 by mpedraza          #+#    #+#             */
-/*   Updated: 2025/11/13 14:41:19 by mpedraza         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:38:03 by mpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(void)
 		arr[i] = 1 + i;
 		i++;
 	}
-
 	printf("=== TESTING: FT_MEMCMP ===\n");
 	i = ft_memcmp(s1, s2, 3);
 	if (i == memcmp(s1, s2, 3))

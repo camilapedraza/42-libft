@@ -6,7 +6,7 @@
 /*   By: mpedraza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:09:38 by mpedraza          #+#    #+#             */
-/*   Updated: 2025/11/13 12:43:41 by mpedraza         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:37:11 by mpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(void)
 	char	c[7];
 	int		i;
 	char	*ptr1;
-	char	*ptr2;
 
 	i = 0;
 	while (i < 7)
@@ -31,14 +30,12 @@ int	main(void)
 	}
 	printf("=== TESTING: FT_MEMCHR ===\n");
 	ptr1 = ft_memchr(c, 'B', 5);
-	ptr2 = memchr(c, 'B', 5);
-	if (ptr1 == ptr2)
+	if (ptr1 == (char *)(memchr(c, 'B', 5)))
 		printf("OK - Test PASSED for 'B' in str [%s]\n", ptr1);
 	else
 		printf("KO - Test FAILED for 'B' in str [%s]\n", ptr1);
 	ptr1 = ft_memchr(a, 2, 9);
-    ptr2 = memchr(a, 2, 9);
-	if (ptr1 == ptr2)
+	if (ptr1 == (char *)(memchr(a, 2, 9)))
 		printf("OK - Test PASSED for 2 in int [%d]\n", *ptr1);
 	else
 		printf("KO - Test FAILED for 2 in int [%d]\n", *ptr1);
