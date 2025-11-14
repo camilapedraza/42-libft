@@ -6,7 +6,7 @@
 /*   By: mpedraza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 21:02:10 by mpedraza          #+#    #+#             */
-/*   Updated: 2025/11/13 21:14:17 by mpedraza         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:16:45 by mpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,10 @@ int	main(void)
 	else
 		printf("KO - Test FAILED for empty string [%s]\n", dest);
 	src = " ";
-    dest = ft_strdup(src);
-    if (ft_strncmp(dest, src, ft_strlen(src)) == 0)
+	dest = ft_strdup(src);
+	if (ft_strncmp(dest, src, ft_strlen(src)) == 0)
 		printf("OK - Test PASSED for string == ' ' [%s]\n", dest);
 	else
 		printf("KO - Test FAILED for string == ' ' [%s]\n", dest);
 	return (0);
 }
-
